@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "resuelto-1f661": {
+      "hosting": {
+        "app": [
+          "resuelto-1f661"
+        ]
+      }
+    }
+  }
+}

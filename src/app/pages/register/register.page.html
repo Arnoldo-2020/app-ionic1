@@ -1,0 +1,107 @@
+<ion-content>
+
+
+  <ion-slides class="mainSlide">
+    
+    <ion-slide>
+
+      <form [formGroup]="registerForm"
+            autocomplete="off"
+            (ngSubmit)="onRegister()">
+        <ion-grid fixed>
+
+          
+        
+          <ion-row>
+            <ion-col>
+              
+                <ion-list>
+                  
+                  <ion-item>
+                    <ion-label>Email</ion-label>
+                    <ion-input  class="form-control"
+                                type="text"
+                                placeholder="Email"
+                                formControlName="email"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Password</ion-label>
+                    <ion-input  class="form-control"
+                                type="password"
+                                placeholder="Password"
+                                formControlName="password"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Confirm pass</ion-label>
+                    <ion-input  class="form-control"
+                                type="password"
+                                placeholder="Password"
+                                formControlName="password2"></ion-input>
+                  </ion-item>
+
+                </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-text color="danger">
+                <span *ngIf="formValidation('email')"><strong>The email is required and has to be valid</strong></span>
+                <span *ngIf="passwordValidation()"><strong>The passwords have to be equals and valid</strong></span>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button type="submit"
+                          color="tertiary"
+                          shape="round"
+                          [disabled]="registerForm.invalid">
+                Register
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </form>
+    
+
+
+    </ion-slide>
+
+    
+
+
+  </ion-slides>
+
+
+
+</ion-content>
+
+
+<ion-footer no-border>
+  <ion-toolbar>
+    
+    <ion-row>
+
+      <ion-col>
+          <ion-button type="submit"
+                      shape="round"
+                      expand="full"
+                      size="small"
+                      fill="outline"
+                      color="tertiary"
+                      routerLink="/auth/login">
+            Already have an account
+          </ion-button>
+      </ion-col>
+
+    </ion-row>
+
+
+
+  </ion-toolbar>
+</ion-footer>

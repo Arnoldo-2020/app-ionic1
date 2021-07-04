@@ -1,0 +1,47 @@
+<ion-content>
+
+
+  <ion-slides class="mainSlide">
+    
+    <ion-slide>
+
+      
+        <ion-grid fixed>
+
+         
+          <ion-row *ngIf="user$ | async as user">
+            <ion-col>
+              <h2>Thanks for registering!</h2>
+              <p>We have sent you a confimation email to: <strong >{{ user.email }}</strong>, please check</p>
+            </ion-col>
+          </ion-row>
+          
+
+          <ion-row>
+            <ion-col>
+              <ion-button type="submit"
+                          color="tertiary"
+                          shape="round"
+                          (click)="sendEmail()"
+                          >
+                      Resend email verification
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        
+        
+      </ion-grid>
+      
+    
+
+
+    </ion-slide>
+
+    
+
+
+  </ion-slides>
+
+
+
+</ion-content>
